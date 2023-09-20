@@ -18,7 +18,7 @@ module SubEnv =
 struct 
   module E = Map.Make(struct
       type t = string
-      let compare = Pervasives.compare
+      let compare = Stdlib.compare
     end)
 
 
@@ -156,7 +156,7 @@ module Env =
 struct 
   module E = Map.Make(struct
       type t = string
-      let compare = Pervasives.compare
+      let compare = Stdlib.compare
     end)
 
   type 'a sub_element = Node of ('a sub_element) E.t * 'a SubEnv.t
